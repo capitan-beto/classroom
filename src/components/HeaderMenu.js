@@ -1,25 +1,34 @@
 import React from 'react'
-import  Nav  from 'react-bootstrap/Nav'
+import Tab from "react-bootstrap/Tab"
+import Tabs from "react-bootstrap/Tabs"
+
 
 const HeaderMenu = () => {
   return (
-    <Nav fill variant="tabs" defaultActiveKey="home">
-      <Nav.Item>
-        <Nav.Link eventKey="home" href='/#'>Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="percusion">Percusión Latinoamericana</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="folclore">Folclore</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="pablovi">Coro Pablo VI</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="update">Subir archivos</Nav.Link>
-      </Nav.Item>
-    </Nav>
+    <div>
+    <Tabs 
+      defaultActiveKey="home"
+      id="header-tab"
+      className="mb-3"
+      fill
+      >
+        <Tab eventKey="home" title="Home">
+          Home content
+        </Tab>
+        <Tab eventKey="percusion" title="Percusión latinoamericana">
+          Percusión latinoamericana content
+        </Tab>
+        <Tab eventKey="folclore" title="Folclore">
+          folclore content
+        </Tab>
+        <Tab eventKey="coropablo" title="Coro Pablo VI">
+          Coro pablo VI content
+        </Tab>
+        <Tab eventKey="updatefiles" title="Subir Archivos">
+          Subir archivos content
+        </Tab>
+      </Tabs>
+    </div>
   )
 }
 
