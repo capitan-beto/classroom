@@ -1,16 +1,25 @@
 import React from 'react'
+import  Nav  from 'react-bootstrap/Nav'
 
 const HeaderMenu = () => {
   return (
-    <div>
-        <ul>
-            <li><a href="">Percusión Latinoamericana</a></li>
-            <li><a href="">Folclore</a></li>
-            <li><a href="">Coro Pablo VI</a></li>
-            <li><a href="">Educación Vocal I</a></li>
-            <li><a href="">Añadir archivo</a></li>
-        </ul>
-    </div>
+    <Nav fill variant="tabs" defaultActiveKey="home">
+      <Nav.Item>
+        <Nav.Link eventKey="home" href='/#'>Home</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="percusion">Percusión Latinoamericana</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="folclore">Folclore</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="pablovi">Coro Pablo VI</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="update">Subir archivos</Nav.Link>
+      </Nav.Item>
+    </Nav>
   )
 }
 
