@@ -1,9 +1,10 @@
 import React from 'react'
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
+import MainContent from './MainContent'
 
 
-const HeaderMenu = () => {
+const Menu = () => {
   return (
     <div>
     <Tabs 
@@ -13,7 +14,7 @@ const HeaderMenu = () => {
       fill
       >
         <Tab eventKey="home" title="Home">
-          Home content
+          <MainContent/>
         </Tab>
         <Tab eventKey="percusion" title="Percusión latinoamericana">
           Percusión latinoamericana content
@@ -32,4 +33,4 @@ const HeaderMenu = () => {
   )
 }
 
-export default HeaderMenu
+export default Menu

@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderMenu from './HeaderMenu'
+import Menu from './Menu'
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
       </style>
 
         <h1>Daniel Verra</h1>
-        <HeaderMenu />
+        <Menu/>
     </div>
   )
 }
