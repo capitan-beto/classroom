@@ -8,8 +8,6 @@ const Header = () => {
         h1 {
           padding: 2.5rem 2rem
         }
-      
-      
       `}
 
       </style>

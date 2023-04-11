@@ -1,4 +1,5 @@
 import React from 'react'
+import MainContent from "./MainContent"
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 
@@ -6,14 +7,15 @@ import Tabs from "react-bootstrap/Tabs"
 const HeaderMenu = () => {
   return (
     <div>
+
     <Tabs 
       defaultActiveKey="home"
       id="header-tab"
-      className="mb-3"
+      className="mb-3 "
       fill
       >
         <Tab eventKey="home" title="Home">
-          Home content
+          <MainContent/>
         </Tab>
         <Tab eventKey="percusion" title="Percusión latinoamericana">
           Percusión latinoamericana content
