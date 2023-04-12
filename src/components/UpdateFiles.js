@@ -5,13 +5,15 @@ import app from './base';
 import {
     getAuth,
     connectAuthEmulator,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    AuthErrorCodes
 } from "firebase/auth";
 
 const UpdateFiles = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,10 +34,11 @@ const UpdateFiles = () => {
           console.log(userCredentials.user);
         }
         catch(error) {
-          console.log(error);
+          setError(true);
+          console.log(error.code == "auth/wrong-password");
         }
     }
-    
+
   return (
     <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}>
       <Form.Group className="mb-4" controlId="formEmail">
@@ -44,6 +47,8 @@ const UpdateFiles = () => {
          placeholder='my@adress.com'
          value={email}
          onChange={e => setEmail(e.target.value)}
+         isInvalid={error}
+         required
         />
       </Form.Group>
       <Form.Group className='mb-4'>
@@ -51,8 +56,11 @@ const UpdateFiles = () => {
         <Form.Control type='password'
          value={password}
          onChange={e => setPassword(e.target.value)}
+         isInvalid={error}
+         required
         />
       </Form.Group>
+      {/* <CustomTag /> */}
       <Button variant='outline-dark' type='submit'>Submit</Button>
 
     </Form>
