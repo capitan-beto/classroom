@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
-import app from './base'
+import React, { useState, useEffect } from 'react';
+import app from './base';
 import {
     getAuth,
     connectAuthEmulator,
@@ -26,9 +25,13 @@ const UpdateFiles = () => {
     const loginEmailPassword = async () => {
         const loginEmail = email;
         const loginPassword = password;
-    
-        const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-        console.log(userCredentials.user)
+        try {
+          const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+          console.log(userCredentials.user);
+        }
+        catch(error) {
+          console.log(error);
+        }
     }
     
   return (
@@ -36,11 +39,13 @@ const UpdateFiles = () => {
         <form action="" onSubmit={handleSubmit}>
             <input type="text"
               id="mail" 
+              placeholder='my@email.com'
               value={email}
               onChange={e => setEmail(e.target.value)}
               />
             <input type="password"
-              id="pass" 
+              id="pass"
+              placeholder='password'
               value={password} 
               onChange={e => setPassword(e.target.value)}
               />
