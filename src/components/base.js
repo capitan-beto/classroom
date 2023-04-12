@@ -1,9 +1,5 @@
 import { initializeApp } from "firebase/app"
-// import {
-//     getAuth,
-//     connectAuthEmulator,
-//     signInWithEmailAndPassword
-// } from "firebase/auth";
+
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -19,15 +15,3 @@ const app = initializeApp(firebaseConfig);
 
 export default app;
 
-// const auth = getAuth(app);
-// connectAuthEmulator(auth, "http://localhost:9009");
-
-// const loginEmailPassword = async () => {
-//     const loginEmail = txtEmail.value;
-//     const loginPassword = txtPassword.value;
-
-//     const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-//     console.log(userCredentials.user)
-// }
-
-// btnLogin.addEventListener("click", loginEmailPassword)

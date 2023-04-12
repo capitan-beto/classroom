@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
 import app from './base';
 import {
     getAuth,
@@ -35,23 +37,25 @@ const UpdateFiles = () => {
     }
     
   return (
-    <div>
-        <form action="" onSubmit={handleSubmit}>
-            <input type="text"
-              id="mail" 
-              placeholder='my@email.com'
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              />
-            <input type="password"
-              id="pass"
-              placeholder='password'
-              value={password} 
-              onChange={e => setPassword(e.target.value)}
-              />
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+    <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}>
+      <Form.Group className="mb-4" controlId="formEmail">
+        <Form.Label>Email</Form.Label>
+        <Form.Control type='email'
+         placeholder='my@adress.com'
+         value={email}
+         onChange={e => setEmail(e.target.value)}
+        />
+      </Form.Group>
+      <Form.Group className='mb-4'>
+        <Form.Label>Password</Form.Label>
+        <Form.Control type='password'
+         value={password}
+         onChange={e => setPassword(e.target.value)}
+        />
+      </Form.Group>
+      <Button variant='outline-dark' type='submit'>Submit</Button>
+
+    </Form>
   )
 }
 

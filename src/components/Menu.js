@@ -26,7 +26,7 @@ const Menu = () => {
         <Tab eventKey="coropablo" title="Coro Pablo VI">
           Coro pablo VI content
         </Tab>
-        <Tab eventKey="updatefiles" title="Subir Archivos">
+        <Tab eventKey="updatefiles" title="Subir Archivos" style={{width:"75%", margin:"auto"}}>
           <UpdateFiles />
         </Tab>
       </Tabs>
