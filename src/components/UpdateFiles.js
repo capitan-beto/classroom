@@ -7,7 +7,7 @@ import {
     getAuth,
     connectAuthEmulator,
     signInWithEmailAndPassword,
-    AuthErrorCodes
+    onAuthStateChanged,
 } from "firebase/auth";
 import LoginError from './LoginError';
 
@@ -17,6 +17,7 @@ const UpdateFiles = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
     const [msg, setMsg] = useState("");
+    const [logState, setLogState] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,6 +25,16 @@ const UpdateFiles = () => {
     }
 
     const auth = getAuth(app);
+
+    useEffect(() => {
+      const monitorAuthState = () => onAuthStateChanged(auth, 
+        async (user) => {
+          if (user) return setLogState(true);
+          return setLogState(false);
+        });
+
+      return () => monitorAuthState();
+    }, [auth])
     
     useEffect(() => {
       connectAuthEmulator(auth, "http://127.0.0.1:9099");
@@ -35,7 +46,6 @@ const UpdateFiles = () => {
         try {
           setError(false);
           const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-          console.log(userCredentials.user);
         }
         catch(error) {
           setError(true);
@@ -50,7 +60,9 @@ const UpdateFiles = () => {
       else setMsg("Ocurrió un error, por favor intente más tarde");
     }
 
-  return (
+  return logState ? (
+    <h1>Logged!</h1>
+  ) :  (
     <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}  aria-controls="example-collapse-text" aria-expanded={error}>
       <Form.Group className="mb-4" controlId="formEmail">
         <Form.Label>Email</Form.Label>
