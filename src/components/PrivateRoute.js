@@ -10,6 +10,7 @@ import {
     onAuthStateChanged,
 } from "firebase/auth";
 import LoginError from './LoginError';
+import Logout from './Logout';
 
 const PrivateRoute = () => {
 
@@ -60,8 +61,7 @@ const PrivateRoute = () => {
       else setMsg("Ocurrió un error, por favor intente más tarde");
     }
 
-  return logState ? 
-  // ( <h1>Logged!</h1> ): 
+  return logState ?
   (
     <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}  aria-controls="example-collapse-text" aria-expanded={error}>
       <Form.Group className="mb-4" controlId="formEmail">
@@ -93,9 +93,7 @@ const PrivateRoute = () => {
     </Form>
   ): 
   (
-    <>
-       <h1>Hello world</h1>
-    </>
+    <Logout />
   )
 }
 
