@@ -60,9 +60,9 @@ const PrivateRoute = () => {
       else setMsg("Ocurrió un error, por favor intente más tarde");
     }
 
-  return logState ? (
-    <h1>Logged!</h1>
-  ) :  (
+  return logState ? 
+  // ( <h1>Logged!</h1> ): 
+  (
     <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}  aria-controls="example-collapse-text" aria-expanded={error}>
       <Form.Group className="mb-4" controlId="formEmail">
         <Form.Label>Email</Form.Label>
@@ -91,6 +91,11 @@ const PrivateRoute = () => {
       <Button variant='outline-dark' type='submit'>Submit</Button>
 
     </Form>
+  ): 
+  (
+    <>
+       <h1>Hello world</h1>
+    </>
   )
 }
 
