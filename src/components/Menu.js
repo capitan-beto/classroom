@@ -2,8 +2,7 @@ import React from 'react';
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import MainContent from './MainContent';
-import UpdateFiles from './UpdateFiles';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
 
 
 const Menu = () => {
@@ -27,8 +26,8 @@ const Menu = () => {
         <Tab eventKey="coropablo" title="Coro Pablo VI">
           Coro pablo VI content
         </Tab>
-        <Tab eventKey="updatefiles" title="Subir Archivos" style={{width:"75%", margin:"auto"}}>
-          <UpdateFiles />
+        <Tab eventKey="private" title="Subir Archivos" style={{width:"75%", margin:"auto"}}>
+          <PrivateRoute />
         </Tab>
       </Tabs>
     </div>

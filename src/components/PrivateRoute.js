@@ -11,7 +11,7 @@ import {
 } from "firebase/auth";
 import LoginError from './LoginError';
 
-const UpdateFiles = () => {
+const PrivateRoute = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -94,4 +94,4 @@ const UpdateFiles = () => {
   )
 }
 
-export default UpdateFiles
+export default PrivateRoute
