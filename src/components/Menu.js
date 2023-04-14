@@ -1,8 +1,9 @@
-import React from 'react'
-import Tab from "react-bootstrap/Tab"
-import Tabs from "react-bootstrap/Tabs"
-import MainContent from './MainContent'
-import UpdateFiles from './UpdateFiles'
+import React from 'react';
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
+import MainContent from './MainContent';
+import UpdateFiles from './UpdateFiles';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 const Menu = () => {
