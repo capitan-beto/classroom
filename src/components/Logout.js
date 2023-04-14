@@ -10,7 +10,10 @@ const Logout = ({ auth }) => {
 
   return (
     <>
-        <Button variant="outline-danger" onClick={logout}>Log Out</Button>
+        <Button variant="outline-danger"
+         onClick={logout}
+         className='mx-4'
+         >Log Out</Button>
     </>
   )
 }
