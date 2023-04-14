@@ -63,6 +63,9 @@ const PrivateRoute = () => {
 
   return logState ?
   (
+    <Logout auth={auth}/>
+  ) :
+  (
     <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}  aria-controls="example-collapse-text" aria-expanded={error}>
       <Form.Group className="mb-4" controlId="formEmail">
         <Form.Label>Email</Form.Label>
@@ -91,10 +94,10 @@ const PrivateRoute = () => {
       <Button variant='outline-dark' type='submit'>Submit</Button>
 
     </Form>
-  ): 
-  (
-    <Logout />
   )
+  // (
+  //   <Logout auth={auth}/>
+  // )
 }
 
 export default PrivateRoute

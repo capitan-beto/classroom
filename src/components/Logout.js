@@ -1,8 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Button from "react-bootstrap/Button" 
+import { signOut } from 'firebase/auth';
 
-const Logout = () => {
+const Logout = ({ auth }) => {
+
+    const logout = async () => {
+        await signOut(auth);
+    }
+
   return (
-    <div>Hello World</div>
+    <>
+        <Button variant="outline-danger" onClick={logout}>Log Out</Button>
+    </>
   )
 }
 
