@@ -11,11 +11,12 @@ const AddFile = () => {
     const [file, setFile] = useState("");
     const [uploadState, setUploadState] = useState("");
     const [subject, setSubject] = useState("Seleccionar Espacio")
-    // const [fileData, setFileData] = useState({
-    //     title:"",
-    //     desc: "",
-    //     subject: "",
-    // })
+    const [fileData, setFileData] = useState({
+        title:"",
+        desc: "",
+        subject: "",
+    })
+
     const storage = getStorage();
     const addFile = ref(storage, `files/${file.name}`);
 
@@ -33,28 +34,48 @@ const AddFile = () => {
         else if (progress == "done") setUploadState(<Badge bg="success">Listo!</Badge>);
     }
 
-    const handleSubject = e => {
-        if (!e.target.text) return;
-        else setSubject(e.target.text);
+    const handleSubject = subject => {
+        if (!subject) return;
+        else setSubject(subject);
+        setFileData(currentFile => {
+            return {...currentFile, subject}
+        })
     }
 
-    
+    const handleTitle = title => {
+        setFileData(currentFile => {
+            return {...currentFile, title};
+        })
+        console.log(fileData)
+    }
+
+    const handleDesc = desc => {
+        setFileData(currentFile => {
+            return {...currentFile, desc};
+        })
+    }
+
   return (
     <>
         <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Título</Form.Label>
-                <Form.Control type='input'/>
+                <Form.Control type='input'
+                 onChange={(e) => handleTitle(e.target.value)}
+                 onClick={() => console.log(fileData)}
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Descripción</Form.Label>
-                <Form.Control as='textarea' />
+                <Form.Control as='textarea' 
+                  onChange={(e) => handleDesc(e.target.value)}
+                />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Espacio Curricular</Form.Label>
                 <DropdownButton id="select-subject" 
                   title={subject} 
-                  onClick={handleSubject}
+                  onClick={(e) => handleSubject(e.target.text)}
                 >
                     <Dropdown.Item>Percusión Latinoamericana</Dropdown.Item>
                     <Dropdown.Item>Coro Pablo VI</Dropdown.Item>
