@@ -10,11 +10,14 @@ import { getStorage, uploadBytes, ref } from "firebase/storage";
 const AddFile = () => {
     const [file, setFile] = useState("");
     const [uploadState, setUploadState] = useState("");
+    const [subject, setSubject] = useState("Seleccionar Espacio")
     // const [fileData, setFileData] = useState({
     //     title:"",
     //     desc: "",
     //     subject: "",
     // })
+    const storage = getStorage();
+    const addFile = ref(storage, `files/${file.name}`);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -30,8 +33,11 @@ const AddFile = () => {
         else if (progress == "done") setUploadState(<Badge bg="success">Listo!</Badge>);
     }
 
-    const storage = getStorage();
-    const addFile = ref(storage, `files/${file.name}`);
+    const handleSubject = e => {
+        if (!e.target.text) return;
+        else setSubject(e.target.text);
+    }
+
     
   return (
     <>
@@ -46,7 +52,10 @@ const AddFile = () => {
             </Form.Group>
             <Form.Group>
                 <Form.Label>Espacio Curricular</Form.Label>
-                <DropdownButton id="select-subject" title="Select Subject">
+                <DropdownButton id="select-subject" 
+                  title={subject} 
+                  onClick={handleSubject}
+                >
                     <Dropdown.Item>Percusión Latinoamericana</Dropdown.Item>
                     <Dropdown.Item>Coro Pablo VI</Dropdown.Item>
                     <Dropdown.Item>Folclore</Dropdown.Item>
