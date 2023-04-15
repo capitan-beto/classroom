@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import LoginError from './LoginError';
 import Logout from './Logout';
+import AddFile from './AddFile';
 
 const PrivateRoute = () => {
 
@@ -63,7 +64,11 @@ const PrivateRoute = () => {
 
   return logState ?
   (
-    <Logout auth={auth} className="p-5"/>
+    <div>
+      <Logout auth={auth} className="p-5"/>
+      <h1>hola</h1>
+      <AddFile/>
+    </div>
   ) :
   (
     <div className='container-sm'>
@@ -96,9 +101,6 @@ const PrivateRoute = () => {
     </Form>
     </div>
   )
-  // (
-  //   <Logout auth={auth}/>
-  // )
 }
 
 export default PrivateRoute
