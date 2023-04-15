@@ -19,14 +19,18 @@ const AddFile = () => {
     })
 
     const storage = getStorage();
-    const addFile = ref(storage, `files/${file.name}`);
+    const addFile = ref(storage, `files/${fileData.subject}/${file.name}`);
+
+    useEffect(() => {
+        console.log(JSON.stringify(fileData));
+    }, [fileData]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         state("load");
         uploadBytes(addFile, file).then((snapshot) => {
             state("done");
-            handleRef(addFile);
+            handleRef();
             console.log("Uploaded a blob or file");
         });
     }
@@ -36,15 +40,16 @@ const AddFile = () => {
         else if (progress == "done") setUploadState(<Badge bg="success">Listo!</Badge>);
     }
 
-    const handleRef = async (ref) => {
+    const handleRef = (ref = `files/${fileData.subject}/${file.name}`) => {
         setFileData(currentFile => {
             return {...currentFile, ref}
         })
     }
 
-    const handleSubject = subject => {
-        if (!subject) return;
-        else setSubject(subject);
+    const handleSubject = e => {
+        let subject = e.id;
+        if (!e.text) return;
+        else setSubject(e.text);
         setFileData(currentFile => {
             return {...currentFile, subject}
         })
@@ -54,7 +59,6 @@ const AddFile = () => {
         setFileData(currentFile => {
             return {...currentFile, title};
         })
-        console.log(fileData)
     }
 
     const handleDesc = desc => {
@@ -70,7 +74,6 @@ const AddFile = () => {
                 <Form.Label>Título</Form.Label>
                 <Form.Control type='input'
                  onChange={(e) => handleTitle(e.target.value)}
-                 onClick={() => console.log(fileData)}
                 />
             </Form.Group>
             <Form.Group className='p-2'>
@@ -83,11 +86,11 @@ const AddFile = () => {
                 <Form.Label>Espacio Curricular</Form.Label>
                 <DropdownButton id="select-subject" 
                   title={subject} 
-                  onClick={(e) => handleSubject(e.target.text)}
+                  onClick={(e) => handleSubject(e.target)}
                 >
-                    <Dropdown.Item>Percusión Latinoamericana</Dropdown.Item>
-                    <Dropdown.Item>Coro Pablo VI</Dropdown.Item>
-                    <Dropdown.Item>Folclore</Dropdown.Item>
+                    <Dropdown.Item id='percusionlat'>Percusión Latinoamericana</Dropdown.Item>
+                    <Dropdown.Item id='coropablovi'>Coro Pablo VI</Dropdown.Item>
+                    <Dropdown.Item id='folclore'>Folclore</Dropdown.Item>
                 </DropdownButton>
             </Form.Group>
             <Form.Group className='py-5'>
