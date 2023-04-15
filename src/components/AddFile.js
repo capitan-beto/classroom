@@ -15,6 +15,7 @@ const AddFile = () => {
         title:"",
         desc: "",
         subject: "",
+        ref: ""
     })
 
     const storage = getStorage();
@@ -64,21 +65,21 @@ const AddFile = () => {
 
   return (
     <>
-        <Form onSubmit={handleSubmit}>
-            <Form.Group>
+        <Form onSubmit={handleSubmit} className='w-50 m-auto bg-light px-5 py-4 rounded border'>
+            <Form.Group className='p-2'>
                 <Form.Label>Título</Form.Label>
                 <Form.Control type='input'
                  onChange={(e) => handleTitle(e.target.value)}
                  onClick={() => console.log(fileData)}
                 />
             </Form.Group>
-            <Form.Group>
+            <Form.Group className='p-2'>
                 <Form.Label>Descripción</Form.Label>
                 <Form.Control as='textarea' 
                   onChange={(e) => handleDesc(e.target.value)}
                 />
             </Form.Group>
-            <Form.Group>
+            <Form.Group className='p-2'>
                 <Form.Label>Espacio Curricular</Form.Label>
                 <DropdownButton id="select-subject" 
                   title={subject} 
@@ -89,7 +90,7 @@ const AddFile = () => {
                     <Dropdown.Item>Folclore</Dropdown.Item>
                 </DropdownButton>
             </Form.Group>
-            <Form.Group>
+            <Form.Group className='py-5'>
                 <Form.Control type='file'
                 onChange={e => setFile(e.target.files[0])}
                 />
