@@ -5,7 +5,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Badge from "react-bootstrap/Badge";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import { getStorage, uploadBytes, ref } from "firebase/storage";
+import { getDownloadURL ,getStorage, uploadBytes, ref } from "firebase/storage";
 
 const AddFile = () => {
     const [file, setFile] = useState("");
@@ -15,6 +15,7 @@ const AddFile = () => {
         title:"",
         desc: "",
         subject: "",
+        url: ""
     })
 
     const storage = getStorage();
@@ -25,6 +26,7 @@ const AddFile = () => {
         state("load");
         uploadBytes(addFile, file).then((snapshot) => {
             state("done");
+            handleRef();
             console.log("Uploaded a blob or file");
         });
     }
@@ -32,6 +34,14 @@ const AddFile = () => {
     const state = (progress) => {
         if (progress == "load") setUploadState(<Spinner animation="border" size="sm" variant="secondary"/>); 
         else if (progress == "done") setUploadState(<Badge bg="success">Listo!</Badge>);
+    }
+
+    const handleRef = () => {
+        getDownloadURL(addFile).then(url => {
+            setFileData(currentFile => {
+                return {...currentFile, url}
+            })
+        });
     }
 
     const handleSubject = subject => {
