@@ -16,7 +16,7 @@ const AddFile = () => {
         title:"",
         desc: "",
         subject: "",
-        ref: ""
+        fileRef: ""
     })
 
     const storage = getStorage();
@@ -28,9 +28,8 @@ const AddFile = () => {
         uploadBytes(addFile, file)
         .then(async (snapshot) => {
             state("done");
-            handleRef();
             console.log("Uploaded a blob or file");
-            writeData(fileData.title, fileData.desc, fileData.subject, fileData.ref);
+            writeData(fileData.title, fileData.desc, fileData.subject, fileData.fileRef);
         })
     }
 
@@ -39,11 +38,11 @@ const AddFile = () => {
         else if (progress == "done") setUploadState(<Badge bg="success">Listo!</Badge>);
     }
 
-    const handleRef = (ref = `files/${fileData.subject}/${file.name}`) => {
-        setFileData(currentFile => {
-            return {...currentFile, ref}
-        })
-    }
+    // const handleRef = (ref) => {
+    //     setFileData(currentFile => {
+    //         return {...currentFile, ref}
+    //     })
+    // }
 
     const handleSubject = e => {
         let subject = e.id;
@@ -63,6 +62,14 @@ const AddFile = () => {
     const handleDesc = desc => {
         setFileData(currentFile => {
             return {...currentFile, desc};
+        })
+    }
+
+    const handleFile = (file) => {
+        setFile(file);
+        const fileRef = `files/${fileData.subject}/${file.name}`;
+        setFileData(currentFile => {
+            return {...currentFile, fileRef}
         })
     }
 
@@ -94,7 +101,7 @@ const AddFile = () => {
             </Form.Group>
             <Form.Group className='py-5'>
                 <Form.Control type='file'
-                onChange={e => setFile(e.target.files[0])}
+                onChange={e => handleFile(e.target.files[0])}
                 />
             </Form.Group>
             <Button type='submit' variant="outline-dark">Submit {uploadState}</Button>
