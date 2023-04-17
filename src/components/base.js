@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
 
+
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -15,14 +16,13 @@ const app = initializeApp(firebaseConfig);
 
 export default app;
 
-function writeData(userId, name, email) {
+export function writeData(title, desc, subject, refData) {
   const db = getDatabase();
-  const reference = ref(db, "users/" + userId);
+  const reference = ref(db, "entries/" + title);
 
   set(reference, { 
-    username: name,
-    email: email
+    desc: desc,
+    subject: subject,
+    ref: refData
   });
-}
-
-writeData("carlos123", "charls", "crnana@gmail.com");
+};

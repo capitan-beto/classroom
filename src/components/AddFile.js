@@ -6,6 +6,7 @@ import Badge from "react-bootstrap/Badge";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { getStorage, uploadBytes, ref } from "firebase/storage";
+import { writeData } from './base';
 
 const AddFile = () => {
     const [file, setFile] = useState("");
@@ -21,18 +22,16 @@ const AddFile = () => {
     const storage = getStorage();
     const addFile = ref(storage, `files/${fileData.subject}/${file.name}`);
 
-    useEffect(() => {
-        console.log(JSON.stringify(fileData));
-    }, [fileData]);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         state("load");
-        uploadBytes(addFile, file).then((snapshot) => {
+        uploadBytes(addFile, file)
+        .then(async (snapshot) => {
             state("done");
             handleRef();
             console.log("Uploaded a blob or file");
-        });
+            writeData(fileData.title, fileData.desc, fileData.subject, fileData.ref);
+        })
     }
 
     const state = (progress) => {
