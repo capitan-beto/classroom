@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -13,3 +14,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export default app;
+
+function writeData(userId, name, email) {
+  const db = getDatabase();
+  const reference = ref(db, "users/" + userId);
+
+  set(reference, { 
+    username: name,
+    email: email
+  });
+}
+
+writeData("carlos123", "charls", "crnana@gmail.com");
