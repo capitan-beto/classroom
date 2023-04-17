@@ -19,14 +19,15 @@ const PrivateRoute = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
     const [msg, setMsg] = useState("");
-    const [logState, setLogState] = useState(false)
+    const [logState, setLogState] = useState(false);
+
+    const auth = getAuth(app);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         loginEmailPassword();
     }
 
-    const auth = getAuth(app);
 
     useEffect(() => {
       const monitorAuthState = () => onAuthStateChanged(auth, 
@@ -62,14 +63,12 @@ const PrivateRoute = () => {
       else setMsg("Ocurrió un error, por favor intente más tarde");
     }
 
-  return logState ?
-  (
+  return logState ?(
     <div>
       <Logout auth={auth} className="p-5"/>
       <AddFile/>
     </div>
-  ) :
-  (
+  ) : (
     <div className='container-sm'>
       <h3>Es necesario que te identifiques para administrar los archivos</h3>
     <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}  aria-controls="example-collapse-text" aria-expanded={error}>
