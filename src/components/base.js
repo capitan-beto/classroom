@@ -25,4 +25,5 @@ export function writeData(title, desc, subject, refData) {
     subject: subject,
     ref: refData
   });
+  console.log("fn exucted")
 };

@@ -20,7 +20,7 @@ const AddFile = () => {
     })
 
     const storage = getStorage();
-    const addFile = ref(storage, `files/${fileData.subject}/${file.name}`);
+    const addFile = ref(storage, `files${fileData.subject}/${file.name}`);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,8 +29,8 @@ const AddFile = () => {
         .then(async (snapshot) => {
             state("done");
             console.log("Uploaded a blob or file");
-            writeData(fileData.title, fileData.desc, fileData.subject, fileData.fileRef);
         })
+        writeData(fileData.title, fileData.desc, fileData.subject, fileData.fileRef);
     }
 
     const state = (progress) => {
