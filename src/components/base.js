@@ -26,7 +26,7 @@ export async function writeData(title, desc, subject, path) {
       title: title,
       desc: desc,
       subject: subject,
-      path: path,
+      path: path
     });
   } catch(error) {
     console.log(error)

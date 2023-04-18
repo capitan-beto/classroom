@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from "react-bootstrap/Button" 
+import Button from "react-bootstrap/Button";
 import { signOut } from 'firebase/auth';
 
 const Logout = ({ auth }) => {
