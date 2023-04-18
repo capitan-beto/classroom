@@ -5,7 +5,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Badge from "react-bootstrap/Badge";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import { getStorage, uploadBytes, ref } from "firebase/storage";
+import { getStorage, uploadBytes, ref, getDownloadURL } from "firebase/storage";
 import { writeData } from './base';
 
 const AddFile = () => {
@@ -16,11 +16,16 @@ const AddFile = () => {
         title:"",
         desc: "",
         subject: "",
-        fileRef: ""
     })
 
+    const data = {
+        name: "El TIo",
+        state: "rr",
+        country: "USA"
+      }      
+
     const storage = getStorage();
-    const addFile = ref(storage, `files${fileData.subject}/${file.name}`);
+    const addFile = ref(storage, `files/${fileData.subject}/${file.name}`);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,20 +34,14 @@ const AddFile = () => {
         .then(async (snapshot) => {
             state("done");
             console.log("Uploaded a blob or file");
-        })
-        // writeData(fileData.title, fileData.desc, fileData.subject, fileData.fileRef);
+            writeData(data);
+        });
     }
 
     const state = (progress) => {
         if (progress == "load") setUploadState(<Spinner animation="border" size="sm" variant="secondary"/>); 
         else if (progress == "done") setUploadState(<Badge bg="success">Listo!</Badge>);
     }
-
-    // const handleRef = (ref) => {
-    //     setFileData(currentFile => {
-    //         return {...currentFile, ref}
-    //     })
-    // }
 
     const handleSubject = e => {
         let subject = e.id;
@@ -67,10 +66,10 @@ const AddFile = () => {
 
     const handleFile = (file) => {
         setFile(file);
-        const fileRef = `files/${fileData.subject}/${file.name}`;
-        setFileData(currentFile => {
-            return {...currentFile, fileRef}
-        })
+        // const fileRef = `files/${fileData.subject}/${file.name}`;
+        // setFileData(currentFile => {
+        //     return {...currentFile, fileRef}
+        // })
     }
 
   return (
@@ -108,6 +107,6 @@ const AddFile = () => {
         </Form>
     </>
   )
-}
+};
 
 export default AddFile

@@ -17,25 +17,13 @@ const app = initializeApp(firebaseConfig);
 
 export default app;
 
-const firestore = getFirestore();
+const db = getFirestore();
 
-const specialOfTheDay = doc(firestore, "dailySpecial/file");
+export async function writeData(data) {
 
-async function writeData() {
-  const docData = {
-    desc: "A delicious vanilla latte",
-    price: 3.99,
-    mil: "Whole",
-    vegan: false
-  }
   try {
-    setDoc(specialOfTheDay, docData, { merge: true });
-    console.log("This value has been written");
+    await setDoc(doc(db, "neo",  data.name), data);
   } catch(error) {
-    console.log(error);
+    console.log(error)
   }
-  
 }
-
-
-writeData();
