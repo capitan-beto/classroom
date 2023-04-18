@@ -16,13 +16,8 @@ const AddFile = () => {
         title:"",
         desc: "",
         subject: "",
+        url: ""
     })
-
-    const data = {
-        name: "El TIo",
-        state: "rr",
-        country: "USA"
-      }      
 
     const storage = getStorage();
     const addFile = ref(storage, `files/${fileData.subject}/${file.name}`);
@@ -34,7 +29,12 @@ const AddFile = () => {
         .then(async (snapshot) => {
             state("done");
             console.log("Uploaded a blob or file");
-            writeData(data);
+            await getDownloadURL(addFile).then(url => {
+                setFileData(currentFile => {
+                    return {...currentFile, url}
+                })
+                writeData(fileData);
+            })
         });
     }
 

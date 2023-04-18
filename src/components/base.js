@@ -22,7 +22,7 @@ const db = getFirestore();
 export async function writeData(data) {
 
   try {
-    await setDoc(doc(db, "neo",  data.name), data);
+    await setDoc(doc(db, data.subject,  data.title), data);
   } catch(error) {
     console.log(error)
   }
