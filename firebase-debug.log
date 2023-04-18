@@ -1,39 +1,263 @@
-[debug] [2023-04-18T01:41:55.989Z] ----------------------------------------------------------------------
-[debug] [2023-04-18T01:41:55.990Z] Command:       /home/carlete/.nvm/versions/node/v16.17.0/bin/node /home/carlete/.nvm/versions/node/v16.17.0/bin/firebase emulators:start --only auth
-[debug] [2023-04-18T01:41:55.991Z] CLI Version:   11.27.0
-[debug] [2023-04-18T01:41:55.991Z] Platform:      linux
-[debug] [2023-04-18T01:41:55.991Z] Node Version:  v16.17.0
-[debug] [2023-04-18T01:41:55.991Z] Time:          Mon Apr 17 2023 22:41:55 GMT-0300 (hora estándar de Argentina)
-[debug] [2023-04-18T01:41:55.991Z] ----------------------------------------------------------------------
+[debug] [2023-04-18T03:15:28.031Z] ----------------------------------------------------------------------
+[debug] [2023-04-18T03:15:28.035Z] Command:       /home/carlete/.nvm/versions/node/v16.17.0/bin/node /home/carlete/.nvm/versions/node/v16.17.0/bin/firebase init
+[debug] [2023-04-18T03:15:28.036Z] CLI Version:   11.27.0
+[debug] [2023-04-18T03:15:28.037Z] Platform:      linux
+[debug] [2023-04-18T03:15:28.037Z] Node Version:  v16.17.0
+[debug] [2023-04-18T03:15:28.038Z] Time:          Tue Apr 18 2023 00:15:28 GMT-0300 (hora estándar de Argentina)
+[debug] [2023-04-18T03:15:28.038Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-04-18T01:41:56.078Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-04-18T01:41:56.078Z] > authorizing via signed-in user (crnana98@gmail.com)
-[info] i  emulators: Starting emulators: auth {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth"}}
-[debug] [2023-04-18T01:41:56.084Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2023-04-18T01:41:56.084Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2023-04-18T01:41:56.084Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}]},"metadata":{"message":"assigned listening specs for emulators"}}
-[debug] [2023-04-18T01:41:56.092Z] [hub] writing locator at /tmp/hub-classroom-project-2532f.json
-[debug] [2023-04-18T01:42:03.179Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2023-04-18T01:42:03.180Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
-[debug] [2023-04-18T01:42:03.180Z] Starting Emulator UI with command {"binary":"node","args":["/home/carlete/.cache/firebase/emulators/ui-v1.11.5/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/carlete/.cache/firebase/emulators/ui-v1.11.5/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
-[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
-[debug] [2023-04-18T01:42:03.284Z] Web / API server started at 127.0.0.1:4000
- {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
-[debug] [2023-04-18T01:42:03.284Z] Web / API server started at ::1:4000
- {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[debug] [2023-04-18T03:15:28.044Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-04-18T03:15:28.244Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-18T03:15:28.245Z] > authorizing via signed-in user (crnana98@gmail.com)
 [info] 
-┌─────────────────────────────────────────────────────────────┐
-│ ✔  All emulators ready! It is now safe to connect your app. │
-│ i  View Emulator UI at http://127.0.0.1:4000/               │
-└─────────────────────────────────────────────────────────────┘
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
 
-┌────────────────┬────────────────┬────────────────────────────┐
-│ Emulator       │ Host:Port      │ View in Emulator UI        │
-├────────────────┼────────────────┼────────────────────────────┤
-│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth │
-└────────────────┴────────────────┴────────────────────────────┘
-  Emulator Hub running at 127.0.0.1:4400
-  Other reserved ports: 4500
+You're about to initialize a Firebase project in this directory:
 
-Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
- 
+  /home/carlete/Odin/repos/guitar-project
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[debug] [2023-04-18T03:15:28.949Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-04-18T03:15:28.950Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-04-18T03:15:48.127Z] Using project from CLI flag: classroom-project-2532f
+[debug] [2023-04-18T03:15:48.129Z] > refreshing access token with scopes: []
+[debug] [2023-04-18T03:15:48.133Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-04-18T03:15:48.133Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-18T03:15:48.343Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-04-18T03:15:48.343Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-18T03:15:48.427Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/classroom-project-2532f [none]
+[debug] [2023-04-18T03:15:49.123Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/classroom-project-2532f 200
+[debug] [2023-04-18T03:15:49.124Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/classroom-project-2532f {"projectId":"classroom-project-2532f","projectNumber":"760004490096","displayName":"classroom-project","name":"projects/classroom-project-2532f","resources":{"hostingSite":"classroom-project-2532f","realtimeDatabaseInstance":"classroom-project-2532f-default-rtdb","storageBucket":"classroom-project-2532f.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_07c3ce41-1147-419b-85b1-fb3f3661d128"}
+[info] i  Using project classroom-project-2532f (classroom-project) 
+[info] 
+=== Firestore Setup
+[debug] [2023-04-18T03:15:49.231Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/firestore.googleapis.com [none]
+[debug] [2023-04-18T03:15:49.231Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/firestore.googleapis.com x-goog-quota-user=projects/classroom-project-2532f
+[debug] [2023-04-18T03:15:50.553Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/firestore.googleapis.com 200
+[debug] [2023-04-18T03:15:50.553Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/firestore.googleapis.com [omitted]
+[debug] [2023-04-18T03:15:50.555Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/classroom-project-2532f/databases/(default) [none]
+[debug] [2023-04-18T03:15:51.885Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/classroom-project-2532f/databases/(default) 200
+[debug] [2023-04-18T03:15:51.886Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/classroom-project-2532f/databases/(default) {"name":"projects/classroom-project-2532f/databases/(default)","uid":"4d6c9cd0-f5ae-4bf6-bcb3-656886944dd9","createTime":"2023-04-14T04:00:32.873500Z","updateTime":"2023-04-14T04:00:32.873500Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","appEngineIntegrationMode":"ENABLED","keyPrefix":"s","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IL/incy7sv4CMIHKmou6sv4C"}
+[debug] [2023-04-18T03:15:51.886Z] database_type: FIRESTORE_NATIVE
+[debug] [2023-04-18T03:15:51.887Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-18T03:15:51.888Z] > authorizing via signed-in user (crnana98@gmail.com)
+[debug] [2023-04-18T03:15:51.889Z] [iam] checking project classroom-project-2532f for permissions ["firebase.projects.get"]
+[debug] [2023-04-18T03:15:51.890Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions [none]
+[debug] [2023-04-18T03:15:51.891Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions x-goog-quota-user=projects/classroom-project-2532f
+[debug] [2023-04-18T03:15:51.891Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-04-18T03:15:53.011Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions 200
+[debug] [2023-04-18T03:15:53.011Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] 
+=== Functions Setup
+[debug] [2023-04-18T03:16:21.177Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-18T03:16:21.178Z] > authorizing via signed-in user (crnana98@gmail.com)
+[debug] [2023-04-18T03:16:21.178Z] [iam] checking project classroom-project-2532f for permissions ["firebase.projects.get"]
+[debug] [2023-04-18T03:16:21.179Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions [none]
+[debug] [2023-04-18T03:16:21.179Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions x-goog-quota-user=projects/classroom-project-2532f
+[debug] [2023-04-18T03:16:21.179Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-04-18T03:16:22.290Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions 200
+[debug] [2023-04-18T03:16:22.290Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-project-2532f:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-04-18T03:16:22.292Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-04-18T03:16:22.292Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/classroom-project-2532f
+[debug] [2023-04-18T03:16:22.296Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-04-18T03:16:22.296Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/classroom-project-2532f
+[debug] [2023-04-18T03:16:23.530Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com 200
+[debug] [2023-04-18T03:16:23.530Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2023-04-18T03:16:23.532Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2023-04-18T03:16:23.532Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/classroom-project-2532f
+[debug] [2023-04-18T03:16:23.539Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/runtimeconfig.googleapis.com 200
+[debug] [2023-04-18T03:16:23.539Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-04-18T03:16:25.475Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2023-04-18T03:16:25.476Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2023-04-18T03:16:35.487Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-04-18T03:16:35.488Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/classroom-project-2532f
+[debug] [2023-04-18T03:16:36.845Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com 200
+[debug] [2023-04-18T03:16:36.846Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/classroom-project-2532f/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] ✔  Wrote functions/package.json 
+[info] ✔  Wrote functions/index.js 
+[info] ✔  Wrote functions/.gitignore 
+[info] 
+=== Storage Setup
+[info] 
+[info] Firebase Storage Security Rules allow you to define how and when to allow
+[info] uploads and downloads. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2023-04-18T03:23:12.900Z] Error: setRawMode EIO
+    at ReadStream.setRawMode (node:tty:78:31)
+    at Interface._setRawMode (node:readline:403:16)
+    at Interface.close (node:readline:587:10)
+    at ReadStream.ontermend (node:readline:287:10)
+    at ReadStream.emit (node:events:525:35)
+    at ReadStream.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-18T03:23:12.912Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:874:11)
+    at WriteStream.Socket._write (node:net:886:8)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+    at _write (node:internal/streams/writable:332:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:336:10)
+    at Console.log (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at DerivedLogger.emit (node:domain:489:12)
+    at addChunk (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-18T03:23:12.916Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:874:11)
+    at WriteStream.Socket._write (node:net:886:8)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+    at _write (node:internal/streams/writable:332:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:336:10)
+    at Console.log (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at DerivedLogger.emit (node:domain:489:12)
+    at addChunk (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-18T03:23:12.920Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:874:11)
+    at WriteStream.Socket._write (node:net:886:8)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+    at _write (node:internal/streams/writable:332:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:336:10)
+    at Console.log (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at DerivedLogger.emit (node:domain:489:12)
+    at addChunk (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-18T03:23:12.924Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:874:11)
+    at WriteStream.Socket._write (node:net:886:8)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+    at _write (node:internal/streams/writable:332:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:336:10)
+    at Console.log (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at DerivedLogger.emit (node:domain:489:12)
+    at addChunk (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-18T03:23:12.932Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:874:11)
+    at WriteStream.Socket._write (node:net:886:8)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+    at _write (node:internal/streams/writable:332:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:336:10)
+    at Console.log (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at DerivedLogger.emit (node:domain:489:12)
+    at addChunk (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-18T03:23:12.936Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:874:11)
+    at WriteStream.Socket._write (node:net:886:8)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+    at _write (node:internal/streams/writable:332:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:336:10)
+    at Console.log (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at DerivedLogger.emit (node:domain:489:12)
+    at addChunk (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-18T03:23:12.940Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:874:11)
+    at WriteStream.Socket._write (node:net:886:8)
+    at writeOrBuffer (node:internal/streams/writable:391:12)
+    at _write (node:internal/streams/writable:332:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:336:10)
+    at Console.log (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at DerivedLogger.emit (node:domain:489:12)
+    at addChunk (/home/carlete/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
