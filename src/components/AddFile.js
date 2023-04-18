@@ -15,27 +15,21 @@ const AddFile = () => {
     const [fileData, setFileData] = useState({
         title:"",
         desc: "",
-        subject: "",
-        url: ""
+        subject: ""
     })
 
     const storage = getStorage();
     const addFile = ref(storage, `files/${fileData.subject}/${file.name}`);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         state("load");
-        uploadBytes(addFile, file)
-        .then(async (snapshot) => {
+        await uploadBytes(addFile, file).then((snap) => {
             state("done");
-            console.log("Uploaded a blob or file");
-            await getDownloadURL(addFile).then(url => {
-                setFileData(currentFile => {
-                    return {...currentFile, url}
-                })
-                writeData(fileData);
-            })
         });
+        getDownloadURL(addFile).then(url => {
+            writeData(fileData.title, fileData.desc, fileData.subject, url);
+        })
     }
 
     const state = (progress) => {
@@ -53,6 +47,7 @@ const AddFile = () => {
     }
 
     const handleTitle = title => {
+        console.log(fileData);
         setFileData(currentFile => {
             return {...currentFile, title};
         })
@@ -66,10 +61,6 @@ const AddFile = () => {
 
     const handleFile = (file) => {
         setFile(file);
-        // const fileRef = `files/${fileData.subject}/${file.name}`;
-        // setFileData(currentFile => {
-        //     return {...currentFile, fileRef}
-        // })
     }
 
   return (

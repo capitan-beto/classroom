@@ -19,10 +19,15 @@ export default app;
 
 const db = getFirestore();
 
-export async function writeData(data) {
+export async function writeData(title, desc, subject, path) {
 
   try {
-    await setDoc(doc(db, data.subject,  data.title), data);
+    await setDoc(doc(db, subject,  title), {
+      title: title,
+      desc: desc,
+      subject: subject,
+      path: path,
+    });
   } catch(error) {
     console.log(error)
   }
