@@ -3,15 +3,15 @@ import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import Collapse from "react-bootstrap/Collapse"
 import app from './base';
+import LoginError from './LoginError';
+import Logout from './Logout';
+import AddFile from './AddFile';
 import {
     getAuth,
     connectAuthEmulator,
     signInWithEmailAndPassword,
     onAuthStateChanged,
 } from "firebase/auth";
-import LoginError from './LoginError';
-import Logout from './Logout';
-import AddFile from './AddFile';
 
 const PrivateRoute = () => {
 
@@ -28,7 +28,6 @@ const PrivateRoute = () => {
         loginEmailPassword();
     }
 
-
     useEffect(() => {
       const monitorAuthState = () => onAuthStateChanged(auth, 
         async (user) => {
@@ -38,10 +37,6 @@ const PrivateRoute = () => {
 
       return () => monitorAuthState();
     }, [auth])
-    
-    useEffect(() => {
-      connectAuthEmulator(auth, "http://127.0.0.1:9099");
-    }, []);
 
     const loginEmailPassword = async () => {
         const loginEmail = email;
