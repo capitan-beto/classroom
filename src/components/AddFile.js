@@ -47,7 +47,6 @@ const AddFile = () => {
     }
 
     const handleTitle = title => {
-        console.log(fileData);
         setFileData(currentFile => {
             return {...currentFile, title};
         })
