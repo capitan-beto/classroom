@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
@@ -77,9 +77,6 @@ const AddFile = () => {
                  onChange={(e) => handleTitle(e.target.value)}
                  required
                 />
-                <Form.Control.Feedback type='invalid'>
-                    Espacio Requerido
-                </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className='py-2 my-4'>
                 <Form.Label>Descripción</Form.Label>
@@ -87,18 +84,12 @@ const AddFile = () => {
                   onChange={(e) => handleDesc(e.target.value)}
                   required
                 />
-                <Form.Control.Feedback type='invalid'>
-                     Espacio requerido.
-                </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className='py-2 mt-5'>
                 <Form.Control type='file'
                 onChange={e => handleFile(e.target.files[0])}
                 required
                 />
-                <Form.Control.Feedback type='invalid'>
-                    Espacio Requerido
-                </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className='p-y2 my-4'>
                 <Form.Label>Espacio Curricular</Form.Label>
