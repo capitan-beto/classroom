@@ -8,7 +8,6 @@ import Logout from './Logout';
 import AddFile from './AddFile';
 import {
     getAuth,
-    connectAuthEmulator,
     signInWithEmailAndPassword,
     onAuthStateChanged,
 } from "firebase/auth";
