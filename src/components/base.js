@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 
 export default app;
 
-const db = getFirestore();
+export const db = getFirestore();
 
 export async function writeData(title, desc, subject, path) {
   try {
