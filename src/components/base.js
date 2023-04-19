@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { doc, getFirestore, setDoc } from "firebase/firestore/lite";
+import { getFirestore, addDoc, collection } from "firebase/firestore/lite";
 
 
 const firebaseConfig = {
@@ -20,9 +20,8 @@ export default app;
 const db = getFirestore();
 
 export async function writeData(title, desc, subject, path) {
-
   try {
-    await setDoc(doc(db, subject,  title), {
+    const docRef = await addDoc(collection(db, subject), {
       title: title,
       desc: desc,
       subject: subject,
