@@ -3,6 +3,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import MainContent from './MainContent';
 import PrivateRoute from './PrivateRoute';
+import Percusion from './subjects/Percusion';
 
 
 const Menu = () => {
@@ -18,7 +19,7 @@ const Menu = () => {
           <MainContent/>
         </Tab>
         <Tab eventKey="percusion" title="Percusión latinoamericana">
-          Percusión latinoamericana content
+          <Percusion/>
         </Tab>
         <Tab eventKey="folclore" title="Folclore">
           folclore content
