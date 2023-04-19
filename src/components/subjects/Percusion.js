@@ -9,15 +9,11 @@ const Percusion = () => {
         const querySnap = await getDocs(collection(db, "percusionlat")) ;
         return querySnap.forEach((doc) => {
             const item = doc.data();
-            setData(curr => {
-                return {...curr, item};
-            })
+            console.log(item);
         })
     }
 
     GetPercusionData();
-
-    console.log(data);
 
   return (
     <div></div>
