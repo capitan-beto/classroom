@@ -2,40 +2,21 @@ import React, { useState, useEffect } from 'react';
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import Collapse from "react-bootstrap/Collapse"
-import app from './base';
 import LoginError from './LoginError';
 import Logout from './Logout';
 import AddFile from './AddFile';
-import {
-    getAuth,
-    signInWithEmailAndPassword,
-    onAuthStateChanged,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
-const PrivateRoute = () => {
-
+const PrivateRoute = ({ logState, auth }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
     const [msg, setMsg] = useState("");
-    const [logState, setLogState] = useState(false);
-
-    const auth = getAuth(app);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         loginEmailPassword();
     }
-
-    useEffect(() => {
-      const monitorAuthState = () => onAuthStateChanged(auth, 
-        async (user) => {
-          if (user) return setLogState(true);
-          return setLogState(false);
-        });
-
-      return () => monitorAuthState();
-    }, [auth])
 
     const loginEmailPassword = async () => {
         const loginEmail = email;
