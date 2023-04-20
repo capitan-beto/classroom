@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import MainContent from './MainContent';
 import PrivateRoute from './PrivateRoute';
 import Percusion from './subjects/Percusion';
-
+import {
+  getAuth,
+  onAuthStateChanged,
+} from "firebase/auth";
+import app from './base';
 
 const Menu = () => {
+  const [logState, setLogState] = useState(false);
+
+  const auth = getAuth(app);
+
+  useEffect(() => {
+    const monitorAuthState = () => onAuthStateChanged(auth, 
+      async (user) => {
+        if (user) return setLogState(true);
+        return setLogState(false);
+      });
+
+    return () => monitorAuthState();
+  }, [auth])
+
   return (
     <div>
     <Tabs 
@@ -19,7 +37,7 @@ const Menu = () => {
           <MainContent/>
         </Tab>
         <Tab eventKey="percusion" title="Percusión latinoamericana">
-          <Percusion/>
+          <Percusion logState={logState}/>
         </Tab>
         <Tab eventKey="folclore" title="Folclore">
           folclore content
@@ -28,7 +46,7 @@ const Menu = () => {
           Coro pablo VI content
         </Tab>
         <Tab eventKey="private" title="Subir Archivos">
-          <PrivateRoute />
+          <PrivateRoute logState={logState} auth={auth}/>
         </Tab>
       </Tabs>
     </div>
