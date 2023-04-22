@@ -4,23 +4,27 @@ import { db } from "../base";
 import FileDisplayAdmin from './FileDisplayAdmin';
 import FileDisplay from './FileDisplay';
 
+
 const Percusion = ({ logState }) => {
+  const [files, setFiles] = useState([]);
 
-    // const GetPercusionData = async () => {
-    //     const querySnap = await getDocs(collection(db, "percusionlat")) ;
-    //     return querySnap.forEach((doc) => {
-    //         const item = doc.data();
-    //         console.log(item);
-    //     })
-    // }
+  const GetPercusionData = async () => {
+    let data = [];
+    const querySnap = await getDocs(collection(db, "percusionlat")) ;
+    querySnap.forEach(doc => data.push(doc.data()));
+    setFiles(data);
+  } 
 
-    // GetPercusionData();
+  useEffect(() => {
+    GetPercusionData();
+    console.log(files);
+  }, []);
 
   return (
-    logState ? 
-    <FileDisplayAdmin/> :
-    <FileDisplay/>
+    logState ? <FileDisplayAdmin files={files}/> :
+     <FileDisplay files={files}/>
   )
 }
 
 export default Percusion
+
