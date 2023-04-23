@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import EditBtn from '../EditBtn';
 
 const FileDisplayAdmin = ({ files }) => {
   const [title, setTitle] = useState("");
@@ -14,10 +15,11 @@ const FileDisplayAdmin = ({ files }) => {
     </Form.Group> 
   }
 
-  const handleTitle = (title) => {
-    setTitle(title);
+  const handleTitle = (item) => {
+    setTitle(item);
     if (titleBtn === "Edit") setTitleBtn("Save");
     else setTitleBtn("Edit");
+    console.log(title === item)
   }
 
   return (
@@ -31,9 +33,10 @@ const FileDisplayAdmin = ({ files }) => {
             <Modal.Dialog>
               <Modal.Header>
                 <Title id={title}/>
-                <Button variant="outline-secondary" onClick={() => handleTitle(title)}>
+                <EditBtn state={titleBtn} item={title}/>
+                {/* <Button variant="outline-secondary" onClick={() => handleTitle(title)}>
                     {titleBtn}
-                </Button>
+                </Button> */}
               </Modal.Header>
               <Modal.Body>
                 <h2>{desc}</h2>
