@@ -12,12 +12,19 @@ const Percusion = ({ logState }) => {
     let data = [];
     const querySnap = await getDocs(collection(db, "percusionlat")) ;
     querySnap.forEach(doc => data.push(doc.data()));
-    setFiles(data);
+    return data;
   } 
 
   useEffect(() => {
-    GetPercusionData();
-    console.log(files);
+    let ignore = false;
+    setFiles(null)
+    GetPercusionData().then(res => {
+      if(!ignore){
+        setFiles(res);
+      }
+    });
+    
+    return () => ignore = true;
   }, []);
 
   return (
