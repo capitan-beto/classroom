@@ -11,7 +11,11 @@ const Percusion = ({ logState }) => {
   const GetPercusionData = async () => {
     let data = [];
     const querySnap = await getDocs(collection(db, "percusionlat")) ;
-    querySnap.forEach(doc => data.push(doc.data()));
+    querySnap.forEach(doc => {
+      const item = doc.data();
+      item.id = doc.id
+      data.push(item)
+    });
     return data;
   } 
 
