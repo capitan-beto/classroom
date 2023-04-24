@@ -26,7 +26,7 @@ const FileDisplayAdmin = ({ files }) => {
         return <div
             className='modal show'
             style={{ display: "block", position: "initial" }}
-            key={title}
+            key={id}
           >
             <Modal.Dialog>
               <Modal.Header>
