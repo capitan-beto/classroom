@@ -5,34 +5,20 @@ import Form from "react-bootstrap/Form";
 import EditBtn from '../EditBtn';
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../base"
+import EditTitle from '../EditTitle';
 
 const FileDisplayAdmin = ({ files }) => {
-  const [title, setTitle] = useState("");
-  const [titleBtn, setTitleBtn] = useState("Edit");
+  const [itemOnEdit, setItemOnEdit] = useState("");
+  const [input, setInput] = useState("");
 
-  const Title = (item) => {
-    if (title !== item.id) return <Modal.Title>{item.id}</Modal.Title>;
-    else return <Form.Group> 
-      <Form.Control type='text'/>
-    </Form.Group> 
+  const updateEdit = () => {
+    setInput("");
   }
 
-  const handleTitle = (item) => {
-    setTitle(item);
-    if (titleBtn === "Edit") setTitleBtn("Save");
-    else setTitleBtn("Edit");
-    console.log(title === item)
+  const startEdit = (item, state) => {
+   if (!state) return setItemOnEdit(item);
+   else return setItemOnEdit("");
   }
-
-  // const updateFile = async (id, field, content) => {
-  //   const itemRef = doc(db, "precusionlat", id);
-
-  //   if (field === "title") {
-  //     await updateDoc(itemRef, { title: content });
-  //   } else if(field === "desc") {
-  //     await updateDoc(itemRef, { desc: content });
-  //   }
-  // }
 
   return (
     files && <div>
@@ -44,8 +30,8 @@ const FileDisplayAdmin = ({ files }) => {
           >
             <Modal.Dialog>
               <Modal.Header>
-                <Title id={title}/>
-                <EditBtn handleTitle={handleTitle} item={title}/>
+                <EditTitle itemOnEdit={itemOnEdit} title={title} setInput={setInput}/>
+                <EditBtn item={title} startEdit={startEdit} updateEdit={updateEdit}/>
               </Modal.Header>
               <Modal.Body>
                 <h2>{desc}</h2>
