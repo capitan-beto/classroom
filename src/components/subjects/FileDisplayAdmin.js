@@ -3,6 +3,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import EditBtn from '../EditBtn';
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../base"
 
 const FileDisplayAdmin = ({ files }) => {
   const [title, setTitle] = useState("");
@@ -22,9 +24,19 @@ const FileDisplayAdmin = ({ files }) => {
     console.log(title === item)
   }
 
+  // const updateFile = async (id, field, content) => {
+  //   const itemRef = doc(db, "precusionlat", id);
+
+  //   if (field === "title") {
+  //     await updateDoc(itemRef, { title: content });
+  //   } else if(field === "desc") {
+  //     await updateDoc(itemRef, { desc: content });
+  //   }
+  // }
+
   return (
-    <div>
-      {files.map(({ title, desc, path }) => {
+    files && <div>
+      {files.map(({ title, desc, path, id }) => {
         return <div
             className='modal show'
             style={{ display: "block", position: "initial" }}

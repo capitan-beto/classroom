@@ -16,6 +16,7 @@ const Percusion = ({ logState }) => {
       item.id = doc.id
       data.push(item)
     });
+    console.log(data);
     return data;
   } 
 
