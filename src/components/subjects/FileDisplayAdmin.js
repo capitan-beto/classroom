@@ -33,10 +33,7 @@ const FileDisplayAdmin = ({ files }) => {
             <Modal.Dialog>
               <Modal.Header>
                 <Title id={title}/>
-                <EditBtn state={titleBtn} item={title}/>
-                {/* <Button variant="outline-secondary" onClick={() => handleTitle(title)}>
-                    {titleBtn}
-                </Button> */}
+                <EditBtn handleTitle={handleTitle} item={title}/>
               </Modal.Header>
               <Modal.Body>
                 <h2>{desc}</h2>

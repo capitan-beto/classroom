@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
 import Button from "react-bootstrap/Button";
 
-const EditBtn = ({ state, item }) => {
-    const [onEdit, setOnEdit] = useState(false);
+const EditBtn = ({ handleTitle, item }) => {
+  const [onEdit, setOnEdit] = useState(false);
+
+  const handleClick = (e) => {
+    setOnEdit(!onEdit);
+    handleTitle(item);
+    console.log(item)
+  }
 
   return (
-    <Button variant='outline-secondary' onClick={() => setOnEdit(!onEdit)}>
+    <Button variant='outline-secondary' onClick={(e) => handleClick(e)}>
         { onEdit ? `Save` : `Edit` }
     </Button>
   )
