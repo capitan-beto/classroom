@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 
 const EditBtn = ({ handleTitle, item }) => {
@@ -7,7 +7,6 @@ const EditBtn = ({ handleTitle, item }) => {
   const handleClick = (e) => {
     setOnEdit(!onEdit);
     handleTitle(item);
-    console.log(item)
   }
 
   return (
