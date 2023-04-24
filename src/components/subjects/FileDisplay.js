@@ -19,7 +19,7 @@ const FileDisplay = ({ files }) => {
               <Modal.Body>
                 <h2>{desc}</h2>
                 <p>
-                  <a href={path} target='_blank'>
+                  <a href={path} target='_blank' rel='noreferrer'>
                     <Button>Abrir en nueva pestaña</Button>
                   </a>
                 </p>

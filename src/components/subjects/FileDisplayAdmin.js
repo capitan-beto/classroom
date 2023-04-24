@@ -38,7 +38,7 @@ const FileDisplayAdmin = ({ files }) => {
               <Modal.Body>
                 <h2>{desc}</h2>
                 <p>
-                  <a href={path} target='_blank'>
+                  <a href={path} target='_blank' rel='noreferrer'>
                     <Button>Link</Button>
                   </a>
                 </p>
