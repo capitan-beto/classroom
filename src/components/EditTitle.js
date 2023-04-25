@@ -6,7 +6,7 @@ const EditTitle = ({ itemOnEdit, title, setInput }) => {
 
   return (
     itemOnEdit === title ?
-      <Form.Control type='text' onChange={e => setInput(e.target.value)}/>
+      <Form.Control type='text' onChange={e => setInput(e.target.value)} placeholder={title}/>
     :
       <Modal.Title>
           {title}

@@ -6,13 +6,16 @@ import EditBtn from '../EditBtn';
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../base"
 import EditTitle from '../EditTitle';
+import EditDesc from '../EditDesc';
 
 const FileDisplayAdmin = ({ files }) => {
   const [itemOnEdit, setItemOnEdit] = useState("");
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(null);
+  const [inputDesc, setInputDesc] = useState(null);
 
   const updateEdit = () => {
-    setInput("");
+    setInput(null);
+    setInputDesc(null);
   }
 
   const startEdit = (item, state) => {
@@ -34,7 +37,7 @@ const FileDisplayAdmin = ({ files }) => {
                 <EditBtn item={title} startEdit={startEdit} updateEdit={updateEdit}/>
               </Modal.Header>
               <Modal.Body>
-                <h2>{desc}</h2>
+                <EditDesc itemOnEdit={itemOnEdit} title={title} setInputDesc={setInputDesc} desc={desc}/>
                 <p>
                   <a href={path} target='_blank' rel='noreferrer'>
                     <Button>Link</Button>
