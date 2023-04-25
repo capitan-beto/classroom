@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import EditBtn from '../EditBtn';
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../base"
 import EditTitle from '../EditTitle';
 import EditDesc from '../EditDesc';
@@ -31,6 +31,10 @@ const FileDisplayAdmin = ({ files }) => {
    else return setItemOnEdit("");
   }
 
+  const deleteItem = async id => {
+    await deleteDoc(doc(db, "percusionlat", id));
+  }
+
   return (
     files && <div>
       {files.map(({ title, desc, path, id }) => {
@@ -43,6 +47,7 @@ const FileDisplayAdmin = ({ files }) => {
               <Modal.Header>
                 <EditTitle itemOnEdit={itemOnEdit} title={title} setInput={setInput}/>
                 <EditBtn item={title} startEdit={startEdit} updateEdit={updateEdit} id={id}/>
+                <Button onClick={() => deleteItem(id)}>Delete</Button>
               </Modal.Header>
               <Modal.Body>
                 <EditDesc itemOnEdit={itemOnEdit} title={title} setInputDesc={setInputDesc} desc={desc}/>
