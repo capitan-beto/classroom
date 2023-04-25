@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
 import EditBtn from '../EditBtn';
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../base"
@@ -13,7 +12,16 @@ const FileDisplayAdmin = ({ files }) => {
   const [input, setInput] = useState(null);
   const [inputDesc, setInputDesc] = useState(null);
 
-  const updateEdit = () => {
+  const updateEdit = async (id) => {
+    const docRef = doc(db, "percusionlat", id);
+    if (input) {
+      console.log(`title: ${input}`);
+      await updateDoc(docRef, { title: input});
+    } 
+    if (inputDesc) {
+      console.log(`desc: ${inputDesc}`)
+      await updateDoc(docRef, { desc: inputDesc });
+    }
     setInput(null);
     setInputDesc(null);
   }
@@ -34,13 +42,13 @@ const FileDisplayAdmin = ({ files }) => {
             <Modal.Dialog>
               <Modal.Header>
                 <EditTitle itemOnEdit={itemOnEdit} title={title} setInput={setInput}/>
-                <EditBtn item={title} startEdit={startEdit} updateEdit={updateEdit}/>
+                <EditBtn item={title} startEdit={startEdit} updateEdit={updateEdit} id={id}/>
               </Modal.Header>
               <Modal.Body>
                 <EditDesc itemOnEdit={itemOnEdit} title={title} setInputDesc={setInputDesc} desc={desc}/>
                 <p>
                   <a href={path} target='_blank' rel='noreferrer'>
-                    <Button>Link</Button>
+                    <Button>Abrír</Button>
                   </a>
                 </p>
               </Modal.Body>

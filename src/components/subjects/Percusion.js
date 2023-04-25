@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getDocs, collection} from "firebase/firestore/lite";
+import { getDocs, collection} from "firebase/firestore";
 import { db } from "../base";
 import FileDisplayAdmin from './FileDisplayAdmin';
 import FileDisplay from './FileDisplay';

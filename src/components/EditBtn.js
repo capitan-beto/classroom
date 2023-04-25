@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 
-const EditBtn = ({ startEdit, item, updateEdit }) => {
+const EditBtn = ({ startEdit, item, updateEdit, id }) => {
   const [onEdit, setOnEdit] = useState(false);
 
   const handleClick = (e) => {
     setOnEdit(!onEdit);
     startEdit(item, onEdit);
     if (onEdit) {
-      updateEdit();
+      updateEdit(id);
     }
   }
 
