@@ -10,7 +10,7 @@ const LoadScreen = () => {
       <Row>
         <Col>
           <Spinner animation="grow" variant="success" className='m-auto'>
-              <span className='visually-hidden'>Cargando...</span>
+            <span className='visually-hidden'>Cargando...</span>
           </Spinner>
         </Col>
       </Row>

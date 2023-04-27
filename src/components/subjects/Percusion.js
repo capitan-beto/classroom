@@ -13,10 +13,9 @@ const Percusion = ({ logState }) => {
     const querySnap = await getDocs(collection(db, "percusionlat")) ;
     querySnap.forEach(doc => {
       const item = doc.data();
-      item.id = doc.id
-      data.push(item)
+      item.id = doc.id;
+      data.push(item);
     });
-    console.log(data);
     return data;
   } 
 
@@ -33,8 +32,10 @@ const Percusion = ({ logState }) => {
   }, []);
 
   return (
-    logState ? <FileDisplayAdmin files={files}/> :
-     <FileDisplay files={files}/>
+    logState ?
+      <FileDisplayAdmin files={files}/>
+    :
+      <FileDisplay files={files}/>
   )
 }
 
