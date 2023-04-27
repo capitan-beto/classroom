@@ -36,7 +36,8 @@ const FileDisplayAdmin = ({ files }) => {
   }
 
   return (
-    files && <div>
+    files ?
+    <div>
       {files.map(({ title, desc, path, id }) => {
         return <div
             className='modal show'
@@ -60,6 +61,14 @@ const FileDisplayAdmin = ({ files }) => {
             </Modal.Dialog>
           </div>
       })}
+    </div>
+     : 
+    <div style={{ 
+      height: "100%",
+      display: "grid",
+      placeContent:"center"}}
+    >
+     <LoadScreen/>
     </div>
   )
 }
