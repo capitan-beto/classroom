@@ -15,6 +15,7 @@ body {
 
 .tab-content {
   height: 100%;
+  display: grid;
 }
 
 code {
