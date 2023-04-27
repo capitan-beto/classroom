@@ -3,7 +3,7 @@ import Menu from './Menu'
 
 const Header = () => {
   return (
-    <div>
+    <div className='layout'>
       <style> {`
         h1 {
           padding: 2.5rem 2rem

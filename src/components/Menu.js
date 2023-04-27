@@ -26,7 +26,6 @@ const Menu = () => {
   }, [auth])
 
   return (
-    <div>
     <Tabs 
       defaultActiveKey="home"
       id="header-tab"
@@ -49,7 +48,6 @@ const Menu = () => {
           <PrivateRoute logState={logState} auth={auth}/>
         </Tab>
       </Tabs>
-    </div>
   )
 }
 
