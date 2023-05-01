@@ -3,7 +3,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import MainContent from './MainContent';
 import PrivateRoute from './PrivateRoute';
-import Percusion from './subjects/Percusion';
+import Percusion from './subjects/percusion/Percusion';
 import {
   getAuth,
   onAuthStateChanged,

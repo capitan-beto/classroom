@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { getDocs, collection, onSnapshot, query} from "firebase/firestore";
-import { db } from "../base";
-import FileDisplayAdmin from './FileDisplayAdmin';
-import FileDisplay from './FileDisplay';
+import {  collection, onSnapshot, query} from "firebase/firestore";
+import { db } from "../../base";
+import FileDisplayAdmin from '../FileDisplayAdmin';
+import FileDisplay from '../FileDisplay';
 
 
 const Percusion = ({ logState }) => {
