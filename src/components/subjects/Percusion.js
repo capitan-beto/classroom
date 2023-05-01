@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getDocs, collection} from "firebase/firestore";
+import { getDocs, collection, onSnapshot, query} from "firebase/firestore";
 import { db } from "../base";
 import FileDisplayAdmin from './FileDisplayAdmin';
 import FileDisplay from './FileDisplay';
@@ -8,26 +8,25 @@ import FileDisplay from './FileDisplay';
 const Percusion = ({ logState }) => {
   const [files, setFiles] = useState([]);
 
-  const GetPercusionData = async () => {
-    let data = [];
-    const querySnap = await getDocs(collection(db, "percusionlat")) ;
-    querySnap.forEach(doc => {
-      const item = doc.data();
-      item.id = doc.id;
-      data.push(item);
-    });
-    return data;
-  } 
+  function getData() {
+    const q = query(collection(db, "percusionlat"));
+    const unsubs = onSnapshot(q, (querySnapshot) => {
+      const data = [];
+      querySnapshot.forEach((doc) => {
+        const item = doc.data();
+        item.id = doc.id;
+        data.push(item);
+      })
+      console.log(data);
+      setFiles(data);
+    })
+  }
+
+
 
   useEffect(() => {
     let ignore = false;
-    setFiles(null)
-    GetPercusionData().then(res => {
-      if(!ignore){
-        setFiles(res);
-      }
-    });
-    
+    getData();
     return () => ignore = true;
   }, []);
 
