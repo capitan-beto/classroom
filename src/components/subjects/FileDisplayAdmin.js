@@ -46,7 +46,9 @@ const FileDisplayAdmin = ({ files }) => {
             key={id}
           >
             <Modal.Dialog>
-              <Modal.Header>
+              <Modal.Header
+                style={{display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: ".5rem" }}
+              >
                 <EditTitle itemOnEdit={itemOnEdit} title={title} setInput={setInput}/>
                 <EditBtn item={title} startEdit={startEdit} updateEdit={updateEdit} id={id}/>
                 <Button onClick={() => deleteItem(id)}>Delete</Button>
