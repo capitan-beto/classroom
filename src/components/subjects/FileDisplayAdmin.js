@@ -57,7 +57,7 @@ const FileDisplayAdmin = ({ files }) => {
                 <EditDesc itemOnEdit={itemOnEdit} title={title} setInputDesc={setInputDesc} desc={desc}/>
                 <p>
                   <a href={path} target='_blank' rel='noreferrer'>
-                    <Button>Abrír</Button>
+                    <Button className='my-2'>Abrír</Button>
                   </a>
                 </p>
               </Modal.Body>
