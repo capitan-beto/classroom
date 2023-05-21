@@ -17,7 +17,6 @@ const Coro = ({ logState }) => {
         item.id = doc.id;
         data.push(item);
       })
-      console.log(data);
       setFiles(data);
     })
   }
