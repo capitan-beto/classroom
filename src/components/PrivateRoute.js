@@ -40,7 +40,7 @@ const PrivateRoute = ({ logState, auth }) => {
 
   return logState ?(
     <div>
-      <Logout auth={auth} className="p-5"/>
+      <Logout auth={auth}/>
       <AddFile/>
     </div>
   ) : (

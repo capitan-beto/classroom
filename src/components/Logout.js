@@ -12,8 +12,10 @@ const Logout = ({ auth }) => {
     <>
         <Button variant="outline-danger"
          onClick={logout}
-         className='mx-4'
-         >Log Out</Button>
+         className='m-auto px-4'
+        >
+          Log Out
+        </Button>
     </>
   )
 }
