@@ -39,7 +39,7 @@ const PrivateRoute = ({ logState, auth }) => {
     }
 
   return logState ?(
-    <div>
+    <div style={{display:"flex", flexDirection:"column", alignItems:"center" }}>
       <Logout auth={auth}/>
       <AddFile/>
     </div>

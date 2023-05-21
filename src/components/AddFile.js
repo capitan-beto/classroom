@@ -69,7 +69,7 @@ const AddFile = () => {
   return (
     <>
         <Form onSubmit={handleSubmit}
-         className='w-50 m-auto bg-light px-5 py-4 rounded border'
+         className='w-75 m-auto bg-light px-5 py-4 rounded border'
         >
             <Form.Group className='py-2 mb-4'>
                 <Form.Label>Título</Form.Label>
