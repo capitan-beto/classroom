@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import EditBtn from '../EditBtn';
-import { doc, updateDoc, deleteDoc, onSnapshot } from "firebase/firestore";
+import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../base"
 import EditTitle from '../EditTitle';
 import EditDesc from '../EditDesc';
@@ -24,7 +24,6 @@ const FileDisplayAdmin = ({ files, subject }) => {
     }
     setInput(null);
     setInputDesc(null);
-    console.log(subject);
   }
   
   const startEdit = (item, state) => {
@@ -34,7 +33,6 @@ const FileDisplayAdmin = ({ files, subject }) => {
 
   const deleteItem = async (id, subject) => {
     await deleteDoc(doc(db, subject, id));
-    console.log(subject);
   }
 
 
