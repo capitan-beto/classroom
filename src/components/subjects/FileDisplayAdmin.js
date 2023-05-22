@@ -31,8 +31,9 @@ const FileDisplayAdmin = ({ files }) => {
    else return setItemOnEdit("");
   }
 
-  const deleteItem = async id => {
+  const deleteItem = async (id) => {
     await deleteDoc(doc(db, "percusionlat", id));
+    console.log(id);
   }
 
 
