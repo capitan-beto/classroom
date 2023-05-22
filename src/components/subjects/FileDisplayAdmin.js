@@ -8,14 +8,14 @@ import EditTitle from '../EditTitle';
 import EditDesc from '../EditDesc';
 import LoadScreen from '../LoadScreen';
 
-const FileDisplayAdmin = ({ files }) => {
+const FileDisplayAdmin = ({ files, subject }) => {
   const [itemOnEdit, setItemOnEdit] = useState("");
   const [input, setInput] = useState(null);
   const [inputDesc, setInputDesc] = useState(null);
   
 
   const updateEdit = async (id) => {
-    const docRef = doc(db, "percusionlat", id);
+    const docRef = doc(db, subject, id);
     if (input) {
       await updateDoc(docRef, { title: input});
     } 
@@ -24,6 +24,7 @@ const FileDisplayAdmin = ({ files }) => {
     }
     setInput(null);
     setInputDesc(null);
+    console.log(subject);
   }
   
   const startEdit = (item, state) => {
@@ -31,9 +32,9 @@ const FileDisplayAdmin = ({ files }) => {
    else return setItemOnEdit("");
   }
 
-  const deleteItem = async (id) => {
-    await deleteDoc(doc(db, "percusionlat", id));
-    console.log(id);
+  const deleteItem = async (id, subject) => {
+    await deleteDoc(doc(db, subject, id));
+    console.log(subject);
   }
 
 
@@ -52,7 +53,7 @@ const FileDisplayAdmin = ({ files }) => {
               >
                 <EditTitle itemOnEdit={itemOnEdit} title={title} setInput={setInput}/>
                 <EditBtn item={title} startEdit={startEdit} updateEdit={updateEdit} id={id}/>
-                <Button onClick={() => deleteItem(id)}>Delete</Button>
+                <Button onClick={() => deleteItem(id, subject)}>Delete</Button>
               </Modal.Header>
               <Modal.Body>
                 <EditDesc itemOnEdit={itemOnEdit} title={title} setInputDesc={setInputDesc} desc={desc}/>

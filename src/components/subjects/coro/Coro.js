@@ -31,7 +31,7 @@ const Coro = ({ logState }) => {
 
   return (
     logState ?
-      <FileDisplayAdmin files={files}/>
+      <FileDisplayAdmin files={files} subject={"coropablovi"} />
     :
       <FileDisplay files={files}/>
   )

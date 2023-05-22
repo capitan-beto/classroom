@@ -31,7 +31,7 @@ const Folclore = ({ logState }) => {
 
   return (
     logState ?
-      <FileDisplayAdmin files={files}/>
+      <FileDisplayAdmin files={files} subject={"folclore"} />
     :
       <FileDisplay files={files}/>
   )

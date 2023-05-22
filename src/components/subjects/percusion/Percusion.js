@@ -31,7 +31,7 @@ const Percusion = ({ logState }) => {
 
   return (
     logState ?
-      <FileDisplayAdmin files={files}/>
+      <FileDisplayAdmin files={files} subject={"percusionlat"} />
     :
       <FileDisplay files={files}/>
   )
