@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import EditBtn from '../EditBtn';
+import EditBtn from '../services/EditBtn';
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../services/base"
 import EditTitle from '../EditTitle';
