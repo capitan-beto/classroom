@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import EditBtn from '../services/EditBtn';
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../services/base"
-import EditTitle from '../EditTitle';
+import EditTitle from '../services/EditTitle';
 import EditDesc from '../services/EditDesc';
 import LoadScreen from '../LoadScreen';
 
