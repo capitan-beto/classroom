@@ -7,7 +7,7 @@ import Folclore from "./subjects/folclore/Folclore";
 import Coro from "./subjects/coro/Coro";
 import Percusion from './subjects/percusion/Percusion';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import app from './base';
+import app from './services/base';
 
 const Menu = () => {
   const [logState, setLogState] = useState(false);

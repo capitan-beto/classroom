@@ -6,7 +6,7 @@ import Badge from "react-bootstrap/Badge";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { getStorage, uploadBytes, ref, getDownloadURL } from "firebase/storage";
-import { writeData } from './base';
+import { writeData } from './services/base';
 
 const AddFile = () => {
     const [disable, setCondition] = useState(true);

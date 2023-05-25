@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {  collection, onSnapshot, query} from "firebase/firestore";
-import { db } from "../../base";
+import { db } from "../../services/base";
 import FileDisplayAdmin from '../FileDisplayAdmin';
 import FileDisplay from '../FileDisplay';
 
@@ -20,8 +20,6 @@ const Folclore = ({ logState }) => {
       setFiles(data);
     })
   }
-
-
 
   useEffect(() => {
     let ignore = false;
