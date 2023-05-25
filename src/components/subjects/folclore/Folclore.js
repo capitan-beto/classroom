@@ -6,7 +6,7 @@ import FileDisplay from '../FileDisplay';
 
 
 const Folclore = ({ logState }) => {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState();
 
   function getData() {
     const q = query(collection(db, "folclore"));

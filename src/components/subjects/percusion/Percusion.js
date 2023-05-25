@@ -6,7 +6,7 @@ import FileDisplay from '../FileDisplay';
 
 
 const Percusion = ({ logState }) => {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState();
 
   function getData() {
     const q = query(collection(db, "percusionlat"));
@@ -20,8 +20,6 @@ const Percusion = ({ logState }) => {
       setFiles(data);
     })
   }
-
-
 
   useEffect(() => {
     let ignore = false;
