@@ -6,7 +6,7 @@ import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../services/base"
 import EditTitle from '../services/EditTitle';
 import EditDesc from '../services/EditDesc';
-import LoadScreen from '../LoadScreen';
+import LoadScreen from '../services/LoadScreen';
 
 const FileDisplayAdmin = ({ files, subject }) => {
   const [itemOnEdit, setItemOnEdit] = useState("");
