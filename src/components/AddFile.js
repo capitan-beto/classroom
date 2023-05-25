@@ -24,18 +24,18 @@ const AddFile = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        state("load");
+        submitState(false);
         await uploadBytes(addFile, file).then((snap) => {
-            state("done");
+            submitState("done");
         });
         getDownloadURL(addFile).then(url => {
             writeData(fileData.title, fileData.desc, fileData.subject, url);
         })
     }
 
-    const state = (progress) => {
-        if (progress == "load") setUploadState(<Spinner animation="border" size="sm" variant="secondary"/>); 
-        else if (progress == "done") setUploadState(<Badge bg="success">Listo!</Badge>);
+    const submitState = (progress) => {
+        if (!progress) setUploadState(<Spinner animation="border" size="sm" variant="secondary"/>); 
+        else setUploadState(<Badge bg="success">Listo!</Badge>);
     }
 
     const handleSubject = e => {
