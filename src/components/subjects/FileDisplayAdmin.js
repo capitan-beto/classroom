@@ -5,7 +5,7 @@ import EditBtn from '../services/EditBtn';
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../services/base"
 import EditTitle from '../EditTitle';
-import EditDesc from '../EditDesc';
+import EditDesc from '../services/EditDesc';
 import LoadScreen from '../LoadScreen';
 
 const FileDisplayAdmin = ({ files, subject }) => {
