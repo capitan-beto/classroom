@@ -3,11 +3,9 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import MainContent from './MainContent';
 import PrivateRoute from './PrivateRoute';
-import Folclore from "./subjects/folclore/Folclore";
-import Coro from "./subjects/coro/Coro";
-import Percusion from './subjects/percusion/Percusion';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import app from './services/base';
+import SubjectRoute from './subjects/SubjectRoute';
 
 const Menu = () => {
   const [logState, setLogState] = useState(false);
@@ -35,13 +33,13 @@ const Menu = () => {
           <MainContent/>
         </Tab>
         <Tab eventKey="percusion" title="Percusión latinoamericana">
-          <Percusion logState={logState}/>
+          <SubjectRoute logState={logState} subject={"percusionlat"} /> 
         </Tab>
         <Tab eventKey="folclore" title="Folclore">
-          <Folclore logState={logState}/>
+          <SubjectRoute logState={logState} subject={"folclore"} />
         </Tab>
         <Tab eventKey="coropablo" title="Coro Pablo VI">
-          <Coro logState={logState}/>
+          <SubjectRoute logState={logState} subject={"coropablovi"} />
         </Tab>
         <Tab eventKey="private" title="Subir Archivos">
           <PrivateRoute logState={logState} auth={auth}/>
