@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Collapse from "react-bootstrap/Collapse";
-import LoginError from './services/LoginError';
+// import Form from "react-bootstrap/Form";
+// import Button from "react-bootstrap/Button";
+// import Collapse from "react-bootstrap/Collapse";
+// import LoginError from './services/LoginError';
 import Logout from './services/Logout';
 import AddFile from './AddFile';
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Login from './services/Login';
 
 const PrivateRoute = ({ logState, auth }) => {
     const [email, setEmail] = useState("");
@@ -44,36 +45,15 @@ const PrivateRoute = ({ logState, auth }) => {
       <AddFile/>
     </div>
   ) : (
-    <div className='container-sm'>
-      <h3>Es necesario que te identifiques para administrar los archivos</h3>
-    <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}  aria-controls="example-collapse-text" aria-expanded={error}>
-      <Form.Group className="mb-4" controlId="formEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type='email'
-         placeholder='my@adress.com'
-         value={email}
-         onChange={e => setEmail(e.target.value)}
-         isInvalid={error}
-         required
-        />
-      </Form.Group>
-      <Form.Group className='mb-4'>
-        <Form.Label>Password</Form.Label>
-        <Form.Control type='password'
-         value={password}
-         onChange={e => setPassword(e.target.value)}
-         isInvalid={error}
-         required
-        />
-      </Form.Group>
-      <Collapse in={error}>
-        <div>
-          <LoginError error={error} msg={msg}/>
-        </div>
-      </Collapse>
-      <Button variant='outline-dark' type='submit'>Submit</Button>
-    </Form>
-    </div>
+    <Login
+      error={error}
+      msg={msg}
+      password={password}
+      setPassword={setPassword}
+      email={email}
+      setEmail={setEmail}
+      handleSubmit={handleSubmit}
+    />
   )
 }
 
