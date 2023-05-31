@@ -9,14 +9,14 @@ const Logout = ({ auth }) => {
     }
 
   return (
-    <>
+    <div>
         <Button variant="outline-danger"
          onClick={logout}
-         className='my-4 px-4 w-75'
+         className='my-4 px-4 w-100'
         >
           Log Out
         </Button>
-    </>
+    </div>
   )
 }
 
