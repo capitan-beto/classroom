@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Spinner from "react-bootstrap/Spinner";
 import Badge from "react-bootstrap/Badge";
-import AddFileForm from '../services/AddFileForm';
+import AddFileForm from "../services/AddFileForm";
 import { uploadFile } from '../assets/uploadFile';
 
 const AddFile = () => {
