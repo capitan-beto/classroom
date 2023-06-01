@@ -1,5 +1,5 @@
 import { getStorage, uploadBytes, ref, getDownloadURL } from "firebase/storage";
-import { writeData } from '../components/services/base';
+import { writeData } from '../services/base';
 
 export const uploadFile = async (file, fileData) => {
     const storage = getStorage();
