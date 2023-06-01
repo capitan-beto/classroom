@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
-// import Collapse from "react-bootstrap/Collapse";
-// import LoginError from './services/LoginError';
 import Logout from './services/Logout';
 import AddFile from './AddFile';
 import { signInWithEmailAndPassword } from "firebase/auth";
