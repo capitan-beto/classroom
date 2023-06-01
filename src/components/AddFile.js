@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import Spinner from "react-bootstrap/Spinner";
 import Badge from "react-bootstrap/Badge";
-import { getStorage, uploadBytes, ref, getDownloadURL } from "firebase/storage";
-import { writeData } from './services/base';
 import AddFileForm from './services/AddFileForm';
+import { uploadFile } from '../assets/uploadFile';
 
 const AddFile = () => {
     const [disable, setCondition] = useState(true);
@@ -16,18 +15,11 @@ const AddFile = () => {
         subject: ""
     })
 
-    const storage = getStorage();
-    const addFile = ref(storage, `files/${fileData.subject}/${file.name}`);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         submitState(false);
-        await uploadBytes(addFile, file).then((snap) => {
-            submitState("done");
-        });
-        getDownloadURL(addFile).then(url => {
-            writeData(fileData.title, fileData.desc, fileData.subject, url);
-        })
+        uploadFile(file, fileData)
+          .then(() => submitState(true))
     }
 
     const submitState = (progress) => {
