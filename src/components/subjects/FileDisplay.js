@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import LoadScreen from '../../services/LoadScreen';
+import LoadScreen from "../../services/LoadScreen";
 
 const FileDisplay = ({ files }) => {
 
