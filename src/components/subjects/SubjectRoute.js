@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {  collection, onSnapshot, query} from "firebase/firestore";
-import { db } from "../../assets/base";
+import { db } from "../../services/base";
 import FileDisplayAdmin from '../subjects/FileDisplayAdmin';
 import FileDisplay from '../subjects/FileDisplay';
 

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import EditBtn from '../../assets/EditBtn';
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
-import { db } from "../../assets/base"
+import { db } from "../../services/base"
 import EditTitle from '../../assets/EditTitle';
 import EditDesc from '../../assets/EditDesc';
 import LoadScreen from '../../assets/LoadScreen';

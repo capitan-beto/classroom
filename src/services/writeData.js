@@ -1,5 +1,5 @@
-import { getFirestore, addDoc, collection } from "firebase/firestore";
-import { db } from "../assets/base"
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "./base"
 
 export async function writeData(title, desc, subject, path) {
     try {
