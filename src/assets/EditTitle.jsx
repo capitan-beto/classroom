@@ -14,4 +14,4 @@ const EditTitle = ({ itemOnEdit, title, setInput }) => {
   )
 }
 
-export default EditTitle
+export default EditTitle;
