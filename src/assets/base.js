@@ -18,15 +18,3 @@ export default app;
 
 export const db = getFirestore();
 
-export async function writeData(title, desc, subject, path) {
-  try {
-    const docRef = await addDoc(collection(db, subject), {
-      title: title,
-      desc: desc,
-      subject: subject,
-      path: path
-    });
-  } catch(error) {
-    console.log(error)
-  }
-}
