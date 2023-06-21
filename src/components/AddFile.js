@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Spinner from "react-bootstrap/Spinner";
 import Badge from "react-bootstrap/Badge";
-import AddFileForm from "../services/AddFileForm";
-import { uploadFile } from '../assets/uploadFile';
+import AddFileForm from "../assets/AddFileForm";
+import { uploadFile } from '../services/uploadFile';
 
 const AddFile = () => {
     const [disable, setCondition] = useState(true);

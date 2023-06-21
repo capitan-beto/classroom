@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import EditBtn from '../../services/EditBtn';
+import EditBtn from '../../assets/EditBtn';
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
-import { db } from "../../services/base"
-import EditTitle from '../../services/EditTitle';
-import EditDesc from '../../services/EditDesc';
-import LoadScreen from '../../services/LoadScreen';
+import { db } from "../../assets/base"
+import EditTitle from '../../assets/EditTitle';
+import EditDesc from '../../assets/EditDesc';
+import LoadScreen from '../../assets/LoadScreen';
 
 const FileDisplayAdmin = ({ files, subject }) => {
   const [itemOnEdit, setItemOnEdit] = useState("");

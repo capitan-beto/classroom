@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Logout from '../services/Logout';
+import Logout from '../assets/Logout';
 import AddFile from './AddFile';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import Login from '../services/Login';
+import Login from '../assets/Login';
 
 const PrivateRoute = ({ logState, auth }) => {
     const [email, setEmail] = useState("");

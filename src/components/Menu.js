@@ -4,7 +4,7 @@ import Tabs from "react-bootstrap/Tabs";
 import MainContent from './MainContent';
 import PrivateRoute from './PrivateRoute';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import app from '../services/base';
+import app from '../assets/base';
 import SubjectRoute from './subjects/SubjectRoute';
 
 const Menu = () => {
