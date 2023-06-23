@@ -1,29 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import MainContent from './MainContent';
 import PrivateRoute from './PrivateRoute';
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import app from '../services/base';
 import SubjectRoute from './subjects/SubjectRoute';
 import { useAuthState } from '../hooks/useAuthState';
 
 const Menu = () => {
   const { logState, auth } = useAuthState();
-
-  // const [logState, setLogState] = useState(false);
-
-  // const auth = getAuth(app);
-
-  // useEffect(() => {
-  //   const monitorAuthState = () => onAuthStateChanged(auth, 
-  //     async (user) => {
-  //       if (user) return setLogState(true);
-  //       return setLogState(false);
-  //     });
-
-  //   return () => monitorAuthState();
-  // }, [auth])
 
   return (
     <Tabs 
