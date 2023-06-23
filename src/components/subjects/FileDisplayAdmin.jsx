@@ -2,19 +2,18 @@ import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import EditBtn from '../../assets/EditBtn';
-import { doc, deleteDoc } from "firebase/firestore";
-import { db } from "../../services/base"
 import EditTitle from '../../assets/EditTitle';
 import EditDesc from '../../assets/EditDesc';
 import LoadScreen from '../../assets/LoadScreen';
-import {updateItem} from '../../services/updateItem';
+import { updateItem } from '../../services/updateItem';
+import { deleteItem } from '../../services/deleteItem';
 
 const FileDisplayAdmin = ({ files, subject }) => {
   const [itemOnEdit, setItemOnEdit] = useState("");
   const [input, setInput] = useState(null);
   const [inputDesc, setInputDesc] = useState(null);
 
-  const updateEdit = async (id) => {
+  const handleEdit = async (id) => {
     await updateItem(id, subject, input, inputDesc);
     setInput(null);
     setInputDesc(null);
@@ -24,11 +23,6 @@ const FileDisplayAdmin = ({ files, subject }) => {
    if (!state) return setItemOnEdit(item);
    else return setItemOnEdit("");
   }
-
-  const deleteItem = async (id, subject) => {
-    await deleteDoc(doc(db, subject, id));
-  }
-
 
   return (
     files ?
@@ -44,8 +38,8 @@ const FileDisplayAdmin = ({ files, subject }) => {
                 style={{display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: ".5rem" }}
               >
                 <EditTitle itemOnEdit={itemOnEdit} title={title} setInput={setInput}/>
-                <EditBtn item={title} startEdit={startEdit} updateEdit={updateEdit} id={id}/>
-                <Button onClick={() => deleteItem(id, subject)}>Delete</Button>
+                <EditBtn item={title} startEdit={startEdit} handleEdit={handleEdit} id={id}/>
+                <Button onClick={() => deleteItem(subject, id)}>Delete</Button>
               </Modal.Header>
               <Modal.Body>
                 <EditDesc itemOnEdit={itemOnEdit} title={title} setInputDesc={setInputDesc} desc={desc}/>
