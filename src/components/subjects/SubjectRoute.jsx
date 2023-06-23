@@ -1,6 +1,6 @@
 import React from 'react';
-import FileDisplayAdmin from '../subjects/FileDisplayAdmin';
-import FileDisplay from '../subjects/FileDisplay';
+import FileDisplayAdmin from './FileDisplayAdmin';
+import FileDisplay from './FileDisplay';
 import { useFetchItems } from '../../hooks/useFetchItems';
 
 

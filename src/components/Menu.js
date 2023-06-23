@@ -6,21 +6,24 @@ import PrivateRoute from './PrivateRoute';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import app from '../services/base';
 import SubjectRoute from './subjects/SubjectRoute';
+import { useAuthState } from '../hooks/useAuthState';
 
 const Menu = () => {
-  const [logState, setLogState] = useState(false);
+  const { logState, auth } = useAuthState();
 
-  const auth = getAuth(app);
+  // const [logState, setLogState] = useState(false);
 
-  useEffect(() => {
-    const monitorAuthState = () => onAuthStateChanged(auth, 
-      async (user) => {
-        if (user) return setLogState(true);
-        return setLogState(false);
-      });
+  // const auth = getAuth(app);
 
-    return () => monitorAuthState();
-  }, [auth])
+  // useEffect(() => {
+  //   const monitorAuthState = () => onAuthStateChanged(auth, 
+  //     async (user) => {
+  //       if (user) return setLogState(true);
+  //       return setLogState(false);
+  //     });
+
+  //   return () => monitorAuthState();
+  // }, [auth])
 
   return (
     <Tabs 
