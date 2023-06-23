@@ -2,26 +2,20 @@ import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import EditBtn from '../../assets/EditBtn';
-import { doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../../services/base"
 import EditTitle from '../../assets/EditTitle';
 import EditDesc from '../../assets/EditDesc';
 import LoadScreen from '../../assets/LoadScreen';
+import {updateItem} from '../../services/updateItem';
 
 const FileDisplayAdmin = ({ files, subject }) => {
   const [itemOnEdit, setItemOnEdit] = useState("");
   const [input, setInput] = useState(null);
   const [inputDesc, setInputDesc] = useState(null);
-  
 
   const updateEdit = async (id) => {
-    const docRef = doc(db, subject, id);
-    if (input) {
-      await updateDoc(docRef, { title: input});
-    } 
-    if (inputDesc) {
-      await updateDoc(docRef, { desc: inputDesc });
-    }
+    await updateItem(id, subject, input, inputDesc);
     setInput(null);
     setInputDesc(null);
   }
