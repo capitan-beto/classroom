@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Logout from '../assets/Logout';
 import AddFile from './AddFile';
 import { signInWithEmailAndPassword } from "firebase/auth";
