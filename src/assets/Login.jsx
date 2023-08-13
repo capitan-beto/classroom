@@ -16,7 +16,7 @@ const Login = ({
   return (
     <div className='container-sm'>
     <h3>Es necesario que te identifiques para administrar los archivos</h3>
-  <Form className='w-50 mx-auto p-5' onSubmit={handleSubmit}  aria-controls="example-collapse-text" aria-expanded={error}>
+  <Form className='col col-md-6 mx-auto p-5' onSubmit={handleSubmit}  aria-controls="example-collapse-text" aria-expanded={error}>
     <Form.Group className="mb-4" controlId="formEmail">
       <Form.Label>Email</Form.Label>
       <Form.Control type='email'
