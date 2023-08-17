@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 
 const LoadScreen = () => {
   return (
-    <Container style={{ height: "100%"}}>
+    <Container style={{ height: "100%" }}>
       <Row>
         <Col>
           <Spinner animation="grow" variant="success" className='m-auto'>
