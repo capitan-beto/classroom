@@ -8,8 +8,8 @@ export const useAuthState = () => {
     const auth = getAuth(app);
 
     useEffect(() => {
-        const monitorAuthState = () => onAuthStateChanged(auth, 
-          async (user) => {
+        const monitorAuthState = onAuthStateChanged(auth, 
+          (user) => {
             if (user) return setLogState(true);
             return setLogState(false);
           });

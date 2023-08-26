@@ -23,6 +23,8 @@ const PrivateRoute = ({ logState, auth }) => {
           const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
           setEmail("");
           setPassword("");
+          console.log(userCredentials);
+          console.log(auth);
         }
         catch(error) {
           setError(true);
